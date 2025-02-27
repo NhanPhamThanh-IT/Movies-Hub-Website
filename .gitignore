@@ -22,3 +22,17 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Other files
+.env
+.DS_Store
+.DS_Store?
+*.swp
+*.lock
+*.sqlite
+*.sqlite3
+*.log
+*.log?
+*.log.*
+*.log-*
+*.log_*
