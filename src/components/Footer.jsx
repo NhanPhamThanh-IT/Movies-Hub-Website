@@ -12,9 +12,47 @@ const Section = ({ title, children }) => (
     </Grid>
 );
 
+// Social Media Component
+const SocialMedia = () => {
+    return (
+        <Grid item xs={12} textAlign="center">
+            <Box
+                sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    gap: 2
+                }}>
+                {[Facebook, Twitter, Instagram, YouTube].map((Icon, index) => (
+                    <Link
+                        key={index}
+                        href="#"
+                        color="inherit"
+                        sx={{
+                            width: 30,
+                            height: 30,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            borderRadius: "50%",
+                            backgroundColor: "transparent",
+                            border: "2px solid #ddd",
+                            "&:hover": {
+                                backgroundColor: "white",
+                                color: "black"
+                            },
+                        }}
+                    >
+                        <Icon fontSize="small" />
+                    </Link>
+                ))}
+            </Box>
+        </Grid>
+    );
+};
+
 // Footer Component
 const Footer = () => (
-    <Box sx={{ backgroundColor: "#121212", color: "white", py: 5, mt: 4 }}>
+    <Box sx={{ backgroundColor: "#121212", color: "white", mt: 4 }}>
         <Container maxWidth="lg">
             <Grid container spacing={4} justifyContent="center">
                 {/* MovieZone Info */}
@@ -41,9 +79,6 @@ const Footer = () => (
                     <Stack spacing={1}>
                         <Link href="#" color="inherit" underline="hover" sx={{ opacity: 0.8, display: "flex", alignItems: "center", gap: 1 }}>
                             <Home fontSize="small" /> Home
-                        </Link>
-                        <Link href="#" color="inherit" underline="hover" sx={{ opacity: 0.8, display: "flex", alignItems: "center", gap: 1 }}>
-                            <ContactMail fontSize="small" /> Contact Us
                         </Link>
                         <Link href="#" color="inherit" underline="hover" sx={{ opacity: 0.8, display: "flex", alignItems: "center", gap: 1 }}>
                             <Info fontSize="small" /> About Us
@@ -73,21 +108,17 @@ const Footer = () => (
             {/* Divider */}
             <Divider sx={{ backgroundColor: "gray", my: 3 }} />
 
-            {/* Social Media */}
-            <Grid item xs={12} textAlign="center">
-                <Typography variant="h6" sx={{ color: "#e50914", fontWeight: "bold", mb: 2 }}>Follow Us</Typography>
-                <Box sx={{ display: "flex", justifyContent: "center", gap: 2 }}>
-                    <Link href="#" color="inherit"><Facebook fontSize="large" /></Link>
-                    <Link href="#" color="inherit"><Twitter fontSize="large" /></Link>
-                    <Link href="#" color="inherit"><Instagram fontSize="large" /></Link>
-                    <Link href="#" color="inherit"><YouTube fontSize="large" /></Link>
-                </Box>
-            </Grid>
+            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 2, mb: 2 }}>
 
-            {/* Copyright */}
-            <Typography variant="body2" align="center" sx={{ opacity: 0.7, mt: 3 }}>
-                &copy; {new Date().getFullYear()} MovieZone. All Rights Reserved.
-            </Typography>
+                {/* Copyright */}
+                <Typography variant="body2" align="center" sx={{ opacity: 0.7 }}>
+                    &copy; {new Date().getFullYear()} MovieZone. All Rights Reserved.
+                </Typography>
+
+                {/* Social Media */}
+                <SocialMedia />
+
+            </Box>
         </Container>
     </Box>
 );

@@ -26,7 +26,7 @@ function App() {
         if (!response.ok) throw new Error('Failed to fetch movies');
 
         const data = await response.json();
-      
+
         if (isMounted) setMovies(data.results);
       } catch (error) {
         if (isMounted) setError(error.message);
