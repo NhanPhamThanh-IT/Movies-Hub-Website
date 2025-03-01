@@ -8,11 +8,18 @@ import { Box, Typography, Link, useTheme } from "@mui/material";
 const Header = () => {
     const theme = useTheme(); // Access the theme for consistent spacing
 
-    // Navigation menu items
-    const menuItems = ["Home", "About", "Contact"];
+    // Navigation menu items with corresponding URLs
+    const menuItems = [
+        { label: "Home", url: "/" },
+        { label: "About", url: "/about-us" },
+        { label: "Contact", url: "/contact" }
+    ];
 
-    // Authentication-related items
-    const authItems = ["Login", "Register"];
+    // Authentication-related items with corresponding URLs
+    const authItems = [
+        { label: "Login", url: "/login" },
+        { label: "Register", url: "/register" }
+    ];
 
     return (
         <Box
@@ -39,11 +46,11 @@ const Header = () => {
                 </Typography>
 
                 {/* Navigation menu links */}
-                {menuItems.map((item) => (
+                {menuItems.map(({ label, url }) => (
                     <Link
                         variant="body1"
-                        key={item}
-                        href="#"
+                        key={label}
+                        href={url}
                         sx={{
                             color: "white", // Set text color to white
                             fontWeight: "medium", // Apply medium font weight
@@ -51,18 +58,18 @@ const Header = () => {
                             "&:hover": { color: "gray" }, // Change color on hover
                         }}
                     >
-                        {item}
+                        {label}
                     </Link>
                 ))}
             </Box>
 
             {/* Authentication links (Login / Register) */}
             <Box sx={{ display: "flex", gap: theme.spacing(4), alignItems: "center" }}>
-                {authItems.map((item) => (
+                {authItems.map(({ label, url }) => (
                     <Link
                         variant="body1"
-                        key={item}
-                        href="#"
+                        key={label}
+                        href={url}
                         sx={{
                             color: "white", // Set text color to white
                             fontWeight: "medium", // Apply medium font weight
@@ -70,7 +77,7 @@ const Header = () => {
                             "&:hover": { color: "gray" }, // Change color on hover
                         }}
                     >
-                        {item}
+                        {label}
                     </Link>
                 ))}
             </Box>

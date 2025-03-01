@@ -1,8 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { Typography, Box } from '@mui/material';
-import MovieSlider from './MovieSlider';
+// Desc: This file contains the MovieList component which is used to display a list of movies in a slider.
 
+// Import necessary react modules
+import React from 'react';
+
+// Import prop types
+import PropTypes from 'prop-types';
+
+// Import necessary MUI components
+import { Typography, Box } from '@mui/material';
+
+// Import the custom component
+import MovieSlider from '../../components/HomePage/MovieSlider';
+
+// MovieList component
 const MovieList = ({ title, list_movies }) => {
     return (
         <Box
@@ -33,6 +43,7 @@ const MovieList = ({ title, list_movies }) => {
     );
 };
 
+// Define prop types
 MovieList.propTypes = {
     title: PropTypes.string.isRequired,
     list_movies: PropTypes.arrayOf(
@@ -43,4 +54,5 @@ MovieList.propTypes = {
     ).isRequired,
 };
 
+// Export the MovieList component
 export default MovieList;
