@@ -5,15 +5,25 @@ import MovieSlider from './MovieSlider';
 
 const MovieList = ({ title, list_movies }) => {
     return (
-        <Box sx={{ padding: 3, marginBottom: 2, width: '100%', maxWidth: '1200px', margin: 'auto' }}>
+        <Box
+            sx={{
+                px: { xs: 2, sm: 3 },
+                py: 3,
+                marginBottom: 2,
+                width: '100%',
+                maxWidth: { xs: '100%', sm: '90%', md: '1200px' },
+                margin: 'auto',
+            }}
+        >
             <Typography
                 variant="h5"
                 sx={{
-                    textTransform: 'uppercase',
+                    textTransform: 'capitalize',
                     fontWeight: 'bold',
                     color: 'white',
                     marginBottom: 2.5,
-                    textAlign: 'center',
+                    fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem' },
+                    textAlign: { sm: 'center', md: 'left' },
                 }}
             >
                 {title}

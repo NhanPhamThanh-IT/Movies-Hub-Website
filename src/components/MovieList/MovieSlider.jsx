@@ -32,7 +32,7 @@ const MovieSlider = ({ list_movies }) => {
                     </Box>
                 ))
             ) : (
-                <Typography color="gray" textAlign="center">Không có phim nào.</Typography>
+                <Typography color="gray" textAlign="center">Not found any movies!</Typography>
             )}
         </Slider>
     );

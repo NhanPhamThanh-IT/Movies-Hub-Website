@@ -1,69 +1,23 @@
-import { useState, useEffect } from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Banner from './components/Banner';
-import MovieList from './components/MovieList/MovieList';
+// Desc: Main App component
 
-function App() {
-  const [movies, setMovies] = useState([]);
-  const [error, setError] = useState(null);
+// Importing React
+import React from "react";
 
-  useEffect(() => {
-    let isMounted = true;
+// Importing the ThemeProvider, CssBaseline, and theme from the Material-UI library
+import { ThemeProvider, CssBaseline } from "@mui/material";
+import theme from "./utils/theme";
 
-    const fetchMovies = async () => {
-      try {
-        const options = {
-          method: 'GET',
-          headers: {
-            accept: 'application/json',
-            Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
-          },
-        };
-        const url = 'https://api.themoviedb.org/3/movie/popular?language=en';
-        const response = await fetch(url, options);
+// Importing the AppRoutes component
+import AppRoutes from "./routes/routes";
 
-        if (!response.ok) throw new Error('Failed to fetch movies');
-
-        const data = await response.json();
-
-        if (isMounted) setMovies(data.results);
-      } catch (error) {
-        if (isMounted) setError(error.message);
-      }
-    };
-
-    fetchMovies();
-
-    return () => {
-      isMounted = false;
-    };
-  }, []);
-
+// Defining the App component
+const App = () => {
   return (
-    <div
-      style={{
-        backgroundColor: 'black',
-        color: 'white',
-        minHeight: '100vh',
-        paddingBottom: '20px',
-      }}
-    >
-      <Header />
-      <Banner />
-
-      {error ? (
-        <p style={{ color: 'red', textAlign: 'center' }}>{error}</p>
-      ) : (
-        <>
-          <MovieList title="Hot Movies" list_movies={movies} />
-          <MovieList title="Recommend Movies" list_movies={movies.slice(0, 5)} />
-        </>
-      )}
-
-      <Footer />
-    </div>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <AppRoutes />
+    </ThemeProvider>
   );
-}
+};
 
 export default App;

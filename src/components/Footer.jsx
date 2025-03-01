@@ -74,34 +74,32 @@ const SocialMedia = () => (
 // Footer component
 const Footer = () => (
     <Box sx={{ backgroundColor: "#121212", color: "white", mt: 4 }}>
-        <Container maxWidth="lg">
 
-            <Grid container spacing={4} justifyContent="center">
-                {/* MovieZone Component */}
-                <MovieZone />
+        <Grid container spacing={4} justifyContent="center">
+            {/* MovieZone Component */}
+            <MovieZone />
 
-                {/* Product Component */}
-                <Product />
+            {/* Product Component */}
+            <Product />
 
-                {/* QuickLinks Component */}
-                <QuickLinks />
+            {/* QuickLinks Component */}
+            <QuickLinks />
 
-                {/* Contact Component */}
-                <Contact />
-            </Grid>
+            {/* Contact Component */}
+            <Contact />
+        </Grid>
 
-            <Divider sx={{ backgroundColor: "gray", my: 3 }} />
+        <Divider sx={{ backgroundColor: "gray", my: 3 }} />
 
-            <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 2, mb: 2 }}>
-                <Typography variant="body2" align="center" sx={{ opacity: 0.7 }}>
-                    &copy; {new Date().getFullYear()} MovieZone. All Rights Reserved.
-                </Typography>
+        <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: 2, pb: 1, px: 2 }}>
+            <Typography variant="body2" align="center" sx={{ opacity: 0.7 }}>
+                &copy; {new Date().getFullYear()} MovieZone. All Rights Reserved.
+            </Typography>
 
-                {/* Social Media Component */}
-                <SocialMedia />
-            </Box>
+            {/* Social Media Component */}
+            <SocialMedia />
+        </Box>
 
-        </Container>
     </Box>
 );
 
