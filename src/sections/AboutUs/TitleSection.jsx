@@ -18,7 +18,7 @@ const TitleSection = () => (
 
         <Typography
             variant="h6"
-            textAlign="center"
+            textAlign="justify"
             sx={{ maxWidth: "700px", mx: "auto", opacity: 0.8, fontSize: "1.1rem" }}
         >
             Welcome to MovieZone, your go-to platform for discovering and enjoying the best movies and TV shows.
@@ -26,7 +26,7 @@ const TitleSection = () => (
             and series for every taste.
         </Typography>
 
-        <Divider sx={{ backgroundColor: "#e50914", my: 5, height: 3, width: "60px", mx: "auto" }} />
+        <Divider sx={{ backgroundColor: "#e50914", my: 5, height: 3, width: "200px", mx: "auto" }} />
     </>
 );
 

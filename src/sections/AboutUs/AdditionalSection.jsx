@@ -4,6 +4,9 @@
 import { Box, Grid, Typography } from "@mui/material";
 import { Globe, Calendar, Video, MessageSquare } from "lucide-react";
 
+// Import custom components
+import FeatureCard from "../../components/AboutUs/FeatureCard";
+
 // Additional feature card component
 const AdditionalSection = () => {
     const additionalFeatures = [
@@ -14,13 +17,22 @@ const AdditionalSection = () => {
     ];
 
     return (
-        <Box mt={8}>
-            <Typography variant="h4" textAlign="center" sx={{ color: "#e50914", mb: 4 }}>
+        <Box 
+        mt={8}
+        >
+            <Typography 
+            variant="h4" 
+            textAlign="center" 
+            sx={{ color: "#e50914", mb: 4 }}
+            fontWeight="bold"
+            >
                 Why Choose MovieZone?
             </Typography>
-            <Grid container spacing={5} justifyContent="center">
+            <Grid container spacing={5} justifyContent="center" alignItems="stretch">
                 {additionalFeatures.map((feature, index) => (
-                    <FeatureCard key={index} {...feature} />
+                    <Grid item xs={12} sm={6} md={3} key={index} display="flex">
+                        <FeatureCard {...feature} />
+                    </Grid>
                 ))}
             </Grid>
         </Box>

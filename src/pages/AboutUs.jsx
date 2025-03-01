@@ -12,7 +12,7 @@ import CallToAction from "../sections/AboutUs/CallToAction";
 const AboutUs = () => {
     return (
         <Box
-            sx={{ backgroundColor: "black", color: "white", minHeight: "100vh", py: 8 }}
+            sx={{ backgroundColor: "#1a1a1a", color: "#E0E0E0", minHeight: "100vh", pt: 4, pb: 6 }}
         >
             <Container
                 maxWidth="lg"
