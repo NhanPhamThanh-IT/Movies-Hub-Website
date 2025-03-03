@@ -123,6 +123,7 @@ const Banner = () => {
             background: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(banner.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
+            marginBottom: 4
         }}>
             <BannerContent />
             <BannerImage />

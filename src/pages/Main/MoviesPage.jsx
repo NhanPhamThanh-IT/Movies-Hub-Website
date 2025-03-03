@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Box } from '@mui/material';
-import MovieList from '../sections/HomePage/MovieList';
+import MovieList from '../../sections/HomePage/MovieList';
 
 const MoviesPage = () => {
     const [movies, setMovies] = useState({

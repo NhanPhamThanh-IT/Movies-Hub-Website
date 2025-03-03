@@ -6,15 +6,17 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 // Importing layouts
 import Layout from "../components/Partials/Layout";
 
-// Importing pages
-import HomePage from "../pages/HomePage";
-import MoviesPage from "../pages/MoviesPage";
-import TVShowsPage from "../pages/TVShowsPage";
-import AboutUs from "../pages/AboutUs";
-import ContactUs from "../pages/ContactUs";
+// Importing main pages
+import HomePage from "../pages/Main/HomePage";
+import MoviesPage from "../pages/Main/MoviesPage";
+import TVShowsPage from "../pages/Main/TVShowsPage";
+
+// Importing others pages
+import AboutUs from "../pages/Others/AboutUs";
+import ContactUs from "../pages/Others/ContactUs";
 
 // Importing Error pages
-import NotFoundPage from "../pages/NotFoundPage";
+import NotFoundPage from "../pages/Errors/404";
 
 // Exporting the AppRoutes component
 export default function AppRoutes() {

@@ -10,7 +10,9 @@ import PropTypes from 'prop-types';
 import { Typography, Box } from '@mui/material';
 
 // Import the custom component
+import AnimatedTitle from '../../components/Animated/Title';
 import MovieSlider from '../../components/HomePage/MovieSlider';
+
 
 // MovieList component
 const MovieList = ({ title, list_movies, error }) => {
@@ -19,25 +21,12 @@ const MovieList = ({ title, list_movies, error }) => {
             sx={{
                 px: { xs: 2, sm: 3 },
                 py: 3,
-                marginBottom: 2,
                 width: '100%',
                 maxWidth: { xs: '100%', sm: '90%', md: '1200px' },
                 margin: 'auto',
             }}
         >
-            <Typography
-                variant="h5"
-                sx={{
-                    textTransform: 'capitalize',
-                    fontWeight: 'bold',
-                    color: 'white',
-                    marginBottom: 2.5,
-                    fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2rem' },
-                    textAlign: { sm: 'center', md: 'left' },
-                }}
-            >
-                {title}
-            </Typography>
+            <AnimatedTitle title={title} />
 
             {error ? (
                 <Typography

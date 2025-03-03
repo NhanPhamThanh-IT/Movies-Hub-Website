@@ -3,10 +3,10 @@ import React from "react";
 import { Box, Container } from "@mui/material";
 
 // Importing sections
-import TitleSection from "../sections/AboutUs/TitleSection";
-import FeaturesSection from "../sections/AboutUs/FeaturesSection";
-import AdditionalSection from "../sections/AboutUs/AdditionalSection";
-import CallToAction from "../sections/AboutUs/CallToAction";
+import TitleSection from "../../sections/AboutUs/TitleSection";
+import FeaturesSection from "../../sections/AboutUs/FeaturesSection";
+import AdditionalSection from "../../sections/AboutUs/AdditionalSection";
+import CallToAction from "../../sections/AboutUs/CallToAction";
 
 // AboutUs page component
 const AboutUs = () => {

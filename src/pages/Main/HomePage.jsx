@@ -5,8 +5,8 @@ import { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 
 // Import custom components
-import Banner from '../sections/HomePage/Banner';
-import MovieList from '../sections/HomePage/MovieList';
+import Banner from '../../sections/HomePage/Banner';
+import MovieList from '../../sections/HomePage/MovieList';
 
 // Home page component
 const HomePage = () => {

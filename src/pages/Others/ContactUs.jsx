@@ -14,8 +14,8 @@ import {
 import { Close } from "@mui/icons-material";
 
 // Importing custom components
-import ContactInfo from "../sections/ContactUs/ContactInfo";
-import ContactForm from "../sections/ContactUs/ContactForm";
+import ContactInfo from "../../sections/ContactUs/ContactInfo";
+import ContactForm from "../../sections/ContactUs/ContactForm";
 
 const ContactUs = () => {
     const [open, setOpen] = useState(false);
