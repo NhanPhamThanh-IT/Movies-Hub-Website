@@ -5,6 +5,9 @@ import { Box, Button, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useCallback } from "react";
 
+// Importing static data
+import data from "../../constants/AboutUs/callToAction";
+
 // CallToAction component
 const CallToAction = () => {
     const navigate = useNavigate();
@@ -13,13 +16,13 @@ const CallToAction = () => {
     return (
         <Box textAlign="center" mt={8}>
             <Typography variant="h5" fontWeight="bold" sx={{ fontSize: "1.5rem" }} color="textPrimary">
-                Join the MovieZone Experience Today!
+                {data.title}
             </Typography>
             <Typography
                 variant="body1"
                 sx={{ maxWidth: 600, mx: "auto", mt: 2, opacity: 0.8, fontSize: "1.1rem" }}
             >
-                Be a part of the most exciting movie streaming platform. Sign up now and dive into the world of entertainment.
+                {data.desc}
             </Typography>
             <Button
                 variant="contained"
@@ -38,7 +41,7 @@ const CallToAction = () => {
                 <Typography
                     fontWeight="bold"
                 >
-                    Get Started
+                    {data.btnText}
                 </Typography>
             </Button>
         </Box>

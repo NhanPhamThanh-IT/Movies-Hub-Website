@@ -3,6 +3,9 @@
 // Importing necessary components
 import { Typography, Divider } from '@mui/material';
 
+// Importing necessary static data
+import data from '../../constants/AboutUs/titleSection';
+
 // TitleSection component
 const TitleSection = () => (
     <>
@@ -13,7 +16,7 @@ const TitleSection = () => (
             sx={{ mb: 4 }}
             color="text.primary"
         >
-            About MovieZone
+            {data.title}
         </Typography>
 
         <Typography
@@ -21,9 +24,7 @@ const TitleSection = () => (
             textAlign="justify"
             sx={{ maxWidth: "700px", mx: "auto", opacity: 0.8, fontSize: "1.1rem" }}
         >
-            Welcome to MovieZone, your go-to platform for discovering and enjoying the best movies and TV shows.
-            Our mission is to bring entertainment lovers together by providing an extensive collection of films
-            and series for every taste.
+            {data.desc}
         </Typography>
 
         <Divider sx={{ backgroundColor: "#e50914", my: 5, height: 3, width: "200px", mx: "auto" }} />
