@@ -1,60 +1,58 @@
-import { useState, useEffect } from 'react';
-import { Box, Grid } from '@mui/material';
-import MovieList from '../../sections/HomePage/MovieList';
+// Desc: Home page component
+
+import { useState, useEffect } from "react";
+import { Box, Typography, CircularProgress } from "@mui/material";
+import MovieList from "../HomePage/MovieList";
 
 const MoviesGrid = () => {
     const [movies, setMovies] = useState([]);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        let isMounted = true;
+        const controller = new AbortController();
         const fetchMovies = async () => {
-            const options = {
-                method: 'GET',
-                headers: { accept: 'application/json', Authorization: `Bearer ${import.meta.env.VITE_API_KEY}` },
-            };
-            const urls = [
-                'https://api.themoviedb.org/3/movie/now_playing?language=en-US',
-                'https://api.themoviedb.org/3/movie/upcoming?language=en-US',
-                'https://api.themoviedb.org/3/movie/popular?language=en-US',
-                'https://api.themoviedb.org/3/movie/top_rated?language=en-US'
-            ];
-
             try {
-                const responses = await Promise.allSettled(urls.map(url => fetch(url, options)));
-                let allMovies = [];
-
-                responses.forEach((res, index) => {
-                    if (res.status === 'fulfilled' && res.value.ok) {
-                        res.value.json().then(data => {
-                            if (isMounted) {
-                                allMovies = [...allMovies, ...data.results];
-                                setMovies(allMovies);
-                            }
-                        });
-                    } else {
-                        setError(`Failed to fetch movies from ${urls[index]}`);
+                const response = await fetch(
+                    "https://api.themoviedb.org/3/movie/popular?language=en",
+                    {
+                        method: "GET",
+                        headers: {
+                            accept: "application/json",
+                            Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`,
+                        },
+                        signal: controller.signal,
                     }
-                });
-            } catch (err) {
-                setError('Failed to fetch movies');
+                );
+
+                if (!response.ok) throw new Error("Failed to fetch movies");
+
+                const data = await response.json();
+                setMovies(data.results);
+            } catch (error) {
+                if (error.name !== "AbortError") setError(error.message);
+            } finally {
+                setLoading(false);
             }
         };
 
         fetchMovies();
-        return () => { isMounted = false; };
+
+        return () => controller.abort();
     }, []);
 
     return (
-        <Box sx={{ p: 3 }}>
-            {error ? <p>{error}</p> : (
-                <Grid container spacing={2}>
-                    {movies.map((movie) => (
-                        <Grid item xs={12} sm={6} md={4} lg={3} key={movie.id}>
-                            <MovieList title={movie.title} list_movies={[movie]} />
-                        </Grid>
-                    ))}
-                </Grid>
+        <Box sx={{ bgcolor: "black", minHeight: "100vh", p: 3 }}>
+            {loading ? (
+                <Box display="flex" justifyContent="center" alignItems="center" minHeight="50vh">
+                    <CircularProgress color="secondary" />
+                </Box>
+            ) : error ? (
+                <Typography color="error" align="center" variant="h6">
+                    {error}
+                </Typography>
+            ) : (
+                <MovieList title="Hot Movies" list_movies={movies} />
             )}
         </Box>
     );
