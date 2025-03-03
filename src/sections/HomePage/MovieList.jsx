@@ -1,9 +1,9 @@
-// Desc: This file contains the MovieList component which is used to display a list of movies in a slider.
+// Desc: This file contains the MovieList component, which displays a list of movies in a slider.
 
-// Import necessary react modules
+// Import necessary React modules
 import React from 'react';
 
-// Import prop types
+// Import PropTypes
 import PropTypes from 'prop-types';
 
 // Import necessary MUI components
@@ -13,7 +13,7 @@ import { Typography, Box } from '@mui/material';
 import MovieSlider from '../../components/HomePage/MovieSlider';
 
 // MovieList component
-const MovieList = ({ title, list_movies }) => {
+const MovieList = ({ title, list_movies, error }) => {
     return (
         <Box
             sx={{
@@ -38,12 +38,31 @@ const MovieList = ({ title, list_movies }) => {
             >
                 {title}
             </Typography>
-            <MovieSlider list_movies={list_movies} />
+
+            {error ? (
+                <Typography
+                    variant="h6"
+                    sx={{
+                        color: 'red',
+                        textAlign: 'center',
+                        fontWeight: 'bold',
+                        fontSize: { xs: '1rem', sm: '1.2rem', md: '1.5rem' },
+                        backgroundColor: 'rgba(255, 0, 0, 0.1)',
+                        padding: 2,
+                        borderRadius: 2,
+                    }}
+                >
+                    ⚠ {error}
+                </Typography>
+            ) : (
+                <MovieSlider list_movies={list_movies} />
+            )}
+
         </Box>
     );
 };
 
-// Define prop types
+// Define PropTypes
 MovieList.propTypes = {
     title: PropTypes.string.isRequired,
     list_movies: PropTypes.arrayOf(
@@ -52,6 +71,7 @@ MovieList.propTypes = {
             title: PropTypes.string.isRequired,
         })
     ).isRequired,
+    error: PropTypes.string, // Added error prop to handle API errors
 };
 
 // Export the MovieList component

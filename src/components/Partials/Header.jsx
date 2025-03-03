@@ -11,6 +11,8 @@ const Header = () => {
     // Navigation menu items with corresponding URLs
     const menuItems = [
         { label: "Home", url: "/" },
+        { label: "Movies", url: "/movies" },
+        { label: "TV Shows", url: "/tv-shows" },
         { label: "About", url: "/about-us" },
         { label: "Contact", url: "/contact-us" }
     ];
