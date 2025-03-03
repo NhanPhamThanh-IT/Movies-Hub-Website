@@ -12,7 +12,7 @@ const Header = () => {
     const menuItems = [
         { label: "Home", url: "/" },
         { label: "About", url: "/about-us" },
-        { label: "Contact", url: "/contact" }
+        { label: "Contact", url: "/contact-us" }
     ];
 
     // Authentication-related items with corresponding URLs
