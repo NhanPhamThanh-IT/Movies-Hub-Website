@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container } from "@mui/material";
 import MovieList from "../../sections/HomePage/MovieList";
-import MovieSearch from "../../components/MoviesPage/MovieSearch";
+import SearchBar from "../../components/Partials/SearchBar";
 import useMovies from "../../hooks/MoviesPage/useMovies";
 import { MOVIE_CATEGORIES } from "../../constants/MoviesPage/movieCategories";
 
@@ -16,7 +16,7 @@ const MoviesPage = () => {
 
     return (
         <Container maxWidth="xl">
-            <MovieSearch onSearch={setSearchTerm} />
+            <SearchBar onSearch={setSearchTerm} />
             {Object.entries(MOVIE_CATEGORIES).map(([key, _]) => (
                 <MovieList
                     key={key}

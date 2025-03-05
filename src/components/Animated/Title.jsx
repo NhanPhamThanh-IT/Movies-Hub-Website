@@ -1,7 +1,11 @@
+// Desc: Animated Title Component
+
+// Importing Required Libraries
 import { Typography, Box, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 import { AutoAwesome } from "@mui/icons-material";
 
+// Animated Title Component
 const AnimatedTitle = ({ title }) => {
     return (
         <Box display="flex" justifyContent="center" alignItems="center" mb={3} width="100%">
@@ -73,4 +77,5 @@ const AnimatedTitle = ({ title }) => {
     );
 };
 
+// Exporting Animated Title Component
 export default AnimatedTitle;

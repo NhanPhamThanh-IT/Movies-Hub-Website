@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 // Importing custom components
 
 // Importing layouts
-import Layout from "../components/Partials/Layout";
+import Layout from "../components/Layout/Index";
 
 // Importing main pages
 import HomePage from "../pages/Main/HomePage";
