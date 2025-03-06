@@ -1,6 +1,7 @@
 // Desc: Feature card component
 
 // Import necessary modules
+import PropTypes from 'prop-types';
 import { Box, Typography } from "@mui/material";
 
 // Feature card component
@@ -38,6 +39,13 @@ const FeatureCard = ({ icon: Icon, title, desc }) => (
         </Typography>
     </Box>
 );
+
+// Typechecking for the FeatureCard component
+FeatureCard.propTypes = {
+    icon: PropTypes.elementType.isRequired,
+    title: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+};
 
 // Export the FeatureCard component
 export default FeatureCard;

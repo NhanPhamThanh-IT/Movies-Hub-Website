@@ -1,6 +1,7 @@
 // Desc: Interactive button component
 
 // Import necessary modules
+import PropTypes from 'prop-types';
 import { Button } from '@mui/material';
 
 // InteractiveButton component
@@ -29,6 +30,13 @@ const InteractiveButton = ({ content, icon, color }) => {
             {content}
         </Button>
     );
+};
+
+// Define the prop types for the InteractiveButton component
+InteractiveButton.propTypes = {
+    content: PropTypes.string.isRequired,
+    icon: PropTypes.element.isRequired,
+    color: PropTypes.string.isRequired
 };
 
 // Export the InteractiveButton component

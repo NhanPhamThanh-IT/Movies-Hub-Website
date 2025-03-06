@@ -1,7 +1,7 @@
 // Desc: Footer component for the website
 
 // Import necessary modules
-import React from "react";
+import PropTypes from 'prop-types';
 import { Grid, Typography, Link, Box, Divider } from "@mui/material";
 import {
     Facebook, Twitter, Instagram, Youtube,
@@ -9,6 +9,7 @@ import {
     Home, Info, LifeBuoy,
     Mail, Phone, MapPin
 } from "lucide-react";
+import { Movie } from '@mui/icons-material';
 
 // Section component
 const Section = ({ title, children }) => (
@@ -107,6 +108,18 @@ const Footer = () => (
         </Box>
     </Box>
 );
+
+// Define prop types for all components
+Section.propTypes = {
+    title: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired
+};
+
+MovieZone.propTypes = {};
+Product.propTypes = {};
+QuickLinks.propTypes = {};
+Contact.propTypes = {};
+SocialMedia.propTypes = {};
 
 // Export the Footer component
 export default Footer;

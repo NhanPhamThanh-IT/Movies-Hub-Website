@@ -1,6 +1,7 @@
 // Desc: SearchBar component for searching movies
 
 // Importing necessary modules
+import PropTypes from 'prop-types';
 import { Box, TextField, InputAdornment, IconButton } from "@mui/material";
 import { LuScanSearch } from "react-icons/lu";
 
@@ -51,6 +52,11 @@ const SearchBar = ({ onSearch }) => (
         }}
     />
 );
+
+// Define prop types for SearchBar component
+SearchBar.propTypes = {
+    onSearch: PropTypes.func.isRequired
+};
 
 // Export the SearchBar component
 export default SearchBar;

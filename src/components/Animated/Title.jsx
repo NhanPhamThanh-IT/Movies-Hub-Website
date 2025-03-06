@@ -1,6 +1,7 @@
 // Desc: Animated Title Component
 
 // Importing Required Libraries
+import PropTypes from 'prop-types';
 import { Typography, Box, Divider } from "@mui/material";
 import { motion } from "framer-motion";
 import { AutoAwesome } from "@mui/icons-material";
@@ -75,6 +76,11 @@ const AnimatedTitle = ({ title }) => {
             />
         </Box>
     );
+};
+
+// Typechecking Props for the Animated Title Component
+AnimatedTitle.propTypes = {
+    title: PropTypes.string.isRequired,
 };
 
 // Exporting Animated Title Component

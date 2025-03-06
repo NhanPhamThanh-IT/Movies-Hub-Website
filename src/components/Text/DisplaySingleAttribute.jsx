@@ -1,6 +1,7 @@
 // Desc: Optimized DisplayAttribute component
 
 // Importing necessary dependencies
+import PropTypes from 'prop-types';
 import { Box, Typography } from "@mui/material";
 
 // DisplaySingleAttribute component
@@ -18,6 +19,12 @@ const DisplaySingleAttribute = ({ attribute, value }) => {
             </Typography>
         </Box>
     );
+};
+
+// Define the prop types for the DisplaySingleAttribute component
+DisplaySingleAttribute.propTypes = {
+    attribute: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
 };
 
 // Exporting DisplaySingleAttribute component
