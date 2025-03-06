@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Backdrop, Fade, Box, Typography, Button } from '@mui/material';
+
+import MovieDetails from './MovieDetails';
+
 import { getOption } from '../../utils/api/options';
 import { API_BASE_URL } from '../../utils/api/config';
 
@@ -32,7 +35,7 @@ const MovieModal = ({ open, handleClose, movie }) => {
             onClose={handleClose}
             closeAfterTransition
             BackdropComponent={Backdrop}
-            BackdropProps={{ timeout: 500 }}
+            BackdropProps={{ timeout: 500, color: 'rgba(0, 0, 0, 0.8)' }}
         >
             <Fade in={open}>
                 <Box
@@ -43,28 +46,24 @@ const MovieModal = ({ open, handleClose, movie }) => {
                         transform: 'translate(-50%, -50%)',
                         bgcolor: 'background.paper',
                         boxShadow: 24,
-                        p: 4,
+                        px: 2,
                         borderRadius: '10px',
-                        maxWidth: 500,
+                        maxWidth: '80%',
+                        maxHeight: '90%',
                         width: '90%',
-                        border: '2px solid #000',
+                        border: '2px solid white',
                     }}
                 >
                     {error ? (
                         <Typography color="error">{error}</Typography>
                     ) : movieDetails ? (
                         <>
-                            <Typography variant="h6" component="h2">
-                                {movieDetails.title}
-                            </Typography>
-                            <Typography sx={{ mt: 2 }}>
-                                {movieDetails.overview}
-                            </Typography>
+                            <MovieDetails movie={movieDetails} />
                         </>
                     ) : (
                         <Typography>Loading...</Typography>
                     )}
-                    <Button onClick={handleClose} sx={{ mt: 2 }} variant="contained" color="primary">
+                    <Button onClick={handleClose} variant="contained" color="primary" sx={{mb: 2}}>
                         Close
                     </Button>
                 </Box>
