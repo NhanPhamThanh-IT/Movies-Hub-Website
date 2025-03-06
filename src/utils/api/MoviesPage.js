@@ -4,7 +4,6 @@ import { getOption } from '../api/options.js';
 export const fetchMoviesByCategory = async (category, signal) => {
     try {
         const response = await fetch(`${API_BASE_URL}/${category}?language=en-US`, {
-            method: 'GET',
             getOption,
             signal
         });

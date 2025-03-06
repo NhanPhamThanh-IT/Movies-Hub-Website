@@ -81,10 +81,6 @@ const MovieModal = ({ open, handleClose, movie }) => {
                     ) : (
                         <Typography>Loading...</Typography>
                     )}
-
-                    <Button onClick={handleClose} variant="contained" color="primary" sx={{ mb: 2 }}>
-                        Close
-                    </Button>
                 </Box>
             </Fade>
         </Modal>

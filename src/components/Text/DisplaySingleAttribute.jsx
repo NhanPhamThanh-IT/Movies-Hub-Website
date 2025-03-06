@@ -13,7 +13,7 @@ const DisplaySingleAttribute = ({ attribute, value }) => {
             <Typography variant="subtitle1" color="text.secondary">
                 {attribute}
             </Typography>
-            <Typography variant="subtitle1" color="text.primary">
+            <Typography variant="subtitle1" color="text.secondary">
                 {value}
             </Typography>
         </Box>

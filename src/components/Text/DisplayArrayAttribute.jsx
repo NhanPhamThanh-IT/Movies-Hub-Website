@@ -18,6 +18,7 @@ const DisplayArrayAttribute = ({ label = "Label", array = [], prop = "name" }) =
                             key={index}
                             label={item[prop]}
                             variant="outlined"
+                            sx={{ color: 'text.secondary' }}
                         />
                     ))
                 ) : (
