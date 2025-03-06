@@ -1,12 +1,18 @@
+// Desc: This file contains the MovieModal component which is a modal that displays the details of a movie when clicked on a movie card.
+
+// Import necessary modules
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Backdrop, Fade, Box, Typography, Button } from '@mui/material';
 
+// Import custom components
 import MovieDetails from './MovieDetails';
 
-import { getOption } from '../../utils/api/options';
-import { API_BASE_URL } from '../../utils/api/config';
+// Importing utils functions
+import { getOption } from '../../../utils/api/options';
+import { API_BASE_URL } from '../../../utils/api/config';
 
+// MovieModal component
 const MovieModal = ({ open, handleClose, movie }) => {
     const [movieDetails, setMovieDetails] = useState(null);
     const [error, setError] = useState(null);
@@ -35,7 +41,7 @@ const MovieModal = ({ open, handleClose, movie }) => {
             onClose={handleClose}
             closeAfterTransition
             BackdropComponent={Backdrop}
-            BackdropProps={{ timeout: 500, color: 'rgba(0, 0, 0, 0.8)' }}
+            BackdropProps={{ timeout: 500 }}
         >
             <Fade in={open}>
                 <Box
@@ -44,26 +50,39 @@ const MovieModal = ({ open, handleClose, movie }) => {
                         top: '50%',
                         left: '50%',
                         transform: 'translate(-50%, -50%)',
-                        bgcolor: 'background.paper',
-                        boxShadow: 24,
                         px: 2,
                         borderRadius: '10px',
                         maxWidth: '80%',
                         maxHeight: '90%',
                         width: '90%',
-                        border: '2px solid white',
+                        overflow: 'hidden',
+                        justifyItems: 'center',
+                        bgcolor: 'rgba(0, 0, 0, 1)',
                     }}
                 >
+                    <Box
+                        sx={{
+                            position: 'absolute',
+                            inset: 0,
+                            backgroundImage: movie?.poster_path
+                                ? `url(${import.meta.env.VITE_IMG_URL}/${movie.poster_path})`
+                                : 'none',
+                            backgroundSize: 'cover',
+                            backgroundPosition: 'center',
+                            filter: 'blur(20px)',
+                            zIndex: -1,
+                        }}
+                    />
+
                     {error ? (
                         <Typography color="error">{error}</Typography>
                     ) : movieDetails ? (
-                        <>
-                            <MovieDetails movie={movieDetails} />
-                        </>
+                        <MovieDetails movie={movieDetails} />
                     ) : (
                         <Typography>Loading...</Typography>
                     )}
-                    <Button onClick={handleClose} variant="contained" color="primary" sx={{mb: 2}}>
+
+                    <Button onClick={handleClose} variant="contained" color="primary" sx={{ mb: 2 }}>
                         Close
                     </Button>
                 </Box>
@@ -72,6 +91,7 @@ const MovieModal = ({ open, handleClose, movie }) => {
     );
 };
 
+// Prop types for MovieModal component
 MovieModal.propTypes = {
     open: PropTypes.bool.isRequired,
     handleClose: PropTypes.func.isRequired,
@@ -81,4 +101,5 @@ MovieModal.propTypes = {
     }).isRequired,
 };
 
+// Exporting MovieModal component
 export default MovieModal;

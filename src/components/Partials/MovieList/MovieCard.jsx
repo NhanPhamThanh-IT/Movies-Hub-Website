@@ -1,9 +1,14 @@
+// Desc: Movie card component to display movie poster and title
+
+// Importing necessary modules
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Typography, Box } from '@mui/material';
 
+// Importing custom components
 import MovieModal from './MovieModal';
 
+// MovieCard component
 const MovieCard = ({ movie }) => {
     const [open, setOpen] = useState(false);
 
@@ -66,6 +71,7 @@ const MovieCard = ({ movie }) => {
     );
 };
 
+// Prop types validation
 MovieCard.propTypes = {
     movie: PropTypes.shape({
         poster_path: PropTypes.string.isRequired,
@@ -73,4 +79,5 @@ MovieCard.propTypes = {
     }).isRequired,
 };
 
+// Exporting MovieCard component
 export default MovieCard;

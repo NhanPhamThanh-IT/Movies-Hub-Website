@@ -1,12 +1,19 @@
+// Desc: Movie slider component
+
+// Import necessary modules
 import React from 'react';
 import PropTypes from 'prop-types';
 import Slider from 'react-slick';
 import { Box, Typography } from '@mui/material';
+
+// Import custom components
 import MovieCard from './MovieCard';
 
+// Import slick carousel styles
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+// MovieSlider component
 const MovieSlider = ({ list_movies }) => {
     const settings = {
         dots: true,
@@ -38,6 +45,7 @@ const MovieSlider = ({ list_movies }) => {
     );
 };
 
+// Prop types for MovieSlider component
 MovieSlider.propTypes = {
     list_movies: PropTypes.arrayOf(
         PropTypes.shape({
@@ -47,4 +55,5 @@ MovieSlider.propTypes = {
     ).isRequired,
 };
 
+// Exporting MovieSlider component
 export default MovieSlider;

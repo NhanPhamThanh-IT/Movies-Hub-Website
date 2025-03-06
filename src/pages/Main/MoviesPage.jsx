@@ -1,10 +1,20 @@
+// Desc: MoviesPage component
+
+// Importing necessary modules
 import { useState } from "react";
 import { Container } from "@mui/material";
-import MovieList from "../../sections/HomePage/MovieList";
+
+// Importing custom components
+import MovieList from "../../sections/Partials/MovieList";
 import SearchBar from "../../components/Partials/SearchBar";
+
+// Importing custom hooks
 import useMovies from "../../hooks/MoviesPage/useMovies";
+
+// Importing constants
 import { MOVIE_CATEGORIES } from "../../constants/MoviesPage/movieCategories";
 
+// MoviesPage component
 const MoviesPage = () => {
     const { movies, errors } = useMovies();
     const [searchTerm, setSearchTerm] = useState("");
@@ -29,4 +39,5 @@ const MoviesPage = () => {
     );
 };
 
+// Exporting MoviesPage component
 export default MoviesPage;
