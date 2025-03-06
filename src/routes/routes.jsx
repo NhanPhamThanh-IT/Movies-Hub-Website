@@ -9,7 +9,6 @@ import Layout from "../components/Layout/Index";
 // Importing main pages
 import HomePage from "../pages/Main/HomePage";
 import MoviesPage from "../pages/Main/MoviesPage";
-import TVShowsPage from "../pages/Main/TVShowsPage";
 
 // Importing others pages
 import AboutUs from "../pages/Others/AboutUs";
@@ -27,7 +26,6 @@ export default function AppRoutes() {
                 <Route element={<Layout />}>
                     <Route path="/home" element={<HomePage />} />
                     <Route path="/movies" element={<MoviesPage />} />
-                    <Route path="/tv-shows" element={<TVShowsPage />} />
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/contact-us" element={<ContactUs />} />
                 </Route>

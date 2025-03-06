@@ -1,13 +1,11 @@
-import { API_BASE_URL } from "../../constants/MoviesPage/movieCategories";
+import { API_BASE_URL } from '../api/config.js';
+import { getOption } from '../api/options.js';
 
 export const fetchMoviesByCategory = async (category, signal) => {
     try {
         const response = await fetch(`${API_BASE_URL}/${category}?language=en-US`, {
             method: 'GET',
-            headers: {
-                accept: 'application/json',
-                Authorization: `Bearer ${import.meta.env.VITE_API_KEY}`
-            },
+            getOption,
             signal
         });
 
