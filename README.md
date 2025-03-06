@@ -1,4 +1,4 @@
-# Movie Management
+# <div align="center">Movie Management</div>
 
 This project is a Movie Management application built with React and Vite. It provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -11,9 +11,50 @@ This project is a Movie Management application built with React and Vite. It pro
 
 ## Getting Started
 
-### Prerequisites
-- Node.js (>=14.0.0)
-- npm (>=6.0.0) or yarn (>=1.22.0)
+### Prerequisites  
+
+Before getting started, ensure that your system has all the necessary tools and libraries installed for smooth project execution. Below are the key requirements:  
+
+#### **Main Requirements**  
+
+- **Node.js** (>=14.0.0): This is a JavaScript runtime environment required to build and run the application. You can check your installed version using the command:  
+  ```sh
+  node -v
+  ```  
+  If not installed, download and install it from the [Node.js Official Website](https://nodejs.org/).  
+
+- **npm** (>=6.0.0) or **yarn** (>=1.22.0): These are package managers used to install the necessary dependencies for the project.  
+  - Check the npm version:  
+    ```sh
+    npm -v
+    ```  
+  - Or check the yarn version (if using yarn):  
+    ```sh
+    yarn -v
+    ```  
+  If not installed, npm comes with Node.js, or you can install Yarn using:  
+  ```sh
+  npm install -g yarn
+  ```  
+
+#### **Supporting Dependencies**  
+
+- **API Backend**: This project requires a backend API to fetch data. In this case, we use an online API from [The Movie Database (TMDb)](https://www.themoviedb.org/). You need to register an account and obtain an API Key to use it in the project.  
+
+  **Steps to get an API Key:**  
+  1. Sign up for an account at [TMDb](https://www.themoviedb.org/signup).  
+  2. Go to the [TMDb API Section](https://www.themoviedb.org/settings/api) and generate an API Key.  
+  3. Save the API Key and add it to your project configuration file (e.g., `.env` or directly in the source code).  
+
+#### **Optional but Recommended**  
+
+In addition to the mandatory requirements above, consider using the following tools for better workflow:  
+
+- ![Git Logo](https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg) **Git**: A version control system to track changes in your source code.  
+- ![VS Code Logo](https://code.visualstudio.com/assets/images/code-stable.png) **VS Code** (or a similar IDE): A powerful code editor for project development.  
+- **Postman**: A useful tool to test API requests and responses before integrating them into the application.   
+
+Once you have all the prerequisites installed, you can proceed with setting up and running the project. 🚀
 
 ### Installation
 1. Clone the repository:
