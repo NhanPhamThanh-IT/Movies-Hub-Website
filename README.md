@@ -50,8 +50,8 @@ Before getting started, ensure that your system has all the necessary tools and 
 
 In addition to the mandatory requirements above, consider using the following tools for better workflow:  
 
-- ![Git Logo](https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg) **Git**: A version control system to track changes in your source code.  
-- ![VS Code Logo](https://code.visualstudio.com/assets/images/code-stable.png) **VS Code** (or a similar IDE): A powerful code editor for project development.  
+- <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.svg" alt="Git Logo" width="15" height="15"/> **Git**: A version control system to track changes in your source code.  
+- <img src="https://code.visualstudio.com/assets/images/code-stable.png" alt="VS Code Logo" width="15" height="15"/> **VS Code** (or a similar IDE): A powerful code editor for project development.  
 - **Postman**: A useful tool to test API requests and responses before integrating them into the application.   
 
 Once you have all the prerequisites installed, you can proceed with setting up and running the project. 🚀
