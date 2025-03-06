@@ -6,7 +6,7 @@ import { Container } from "@mui/material";
 
 // Importing custom components
 import MovieList from "../../sections/Partials/MovieList";
-import SearchBar from "../../components/Partials/SearchBar";
+import SearchBar from "../../components/InputField/SearchBar";
 
 // Importing custom hooks
 import useMovies from "../../hooks/MoviesPage/useMovies";

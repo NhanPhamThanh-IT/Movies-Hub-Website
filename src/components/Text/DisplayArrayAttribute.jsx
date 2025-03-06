@@ -1,9 +1,14 @@
-import { Box, Chip, Paper, Typography } from '@mui/material';
+// Desc: Display array attribute with label and array of objects
 
+// Import necessary modules
+import PropTypes from 'prop-types';
+import { Box, Chip, Typography } from '@mui/material';
+
+// DisplayArrayAttribute component
 const DisplayArrayAttribute = ({ label = "Label", array = [], prop = "name" }) => {
     return (
-        <Paper elevation={2} sx={{ p: 2, mb: 2 }}>
-            <Typography variant="subtitle1" color="text.primary" gutterBottom>
+        <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Typography variant="subtitle1" color="text.secondary" gutterBottom>
                 {label}
             </Typography>
             <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
@@ -13,17 +18,24 @@ const DisplayArrayAttribute = ({ label = "Label", array = [], prop = "name" }) =
                             key={index}
                             label={item[prop]}
                             variant="outlined"
-                            color="default"
                         />
                     ))
                 ) : (
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography variant="subtitle1" color="text.secondary">
                         N/A
                     </Typography>
                 )}
             </Box>
-        </Paper>
+        </Box>
     );
 };
 
+// Expected prop types
+DisplayArrayAttribute.propTypes = {
+    label: PropTypes.string.isRequired,
+    array: PropTypes.array.isRequired,
+    prop: PropTypes.string.isRequired,
+};
+
+// Default prop values
 export default DisplayArrayAttribute;

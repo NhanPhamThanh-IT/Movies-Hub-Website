@@ -11,7 +11,7 @@ import { Typography, Box } from '@mui/material';
 
 // Import the custom component
 import AnimatedTitle from '../../components/Animated/Title';
-import MovieSlider from '../../components/Partials/MovieList/MovieSlider';
+import MovieSlider from '../../components/MovieList/MovieSlider';
 
 
 // MovieList component

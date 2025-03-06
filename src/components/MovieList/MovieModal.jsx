@@ -9,8 +9,8 @@ import { Modal, Backdrop, Fade, Box, Typography, Button } from '@mui/material';
 import MovieDetails from './MovieDetails';
 
 // Importing utils functions
-import { getOption } from '../../../utils/api/options';
-import { API_BASE_URL } from '../../../utils/api/config';
+import { getOption } from '../../utils/api/options';
+import { API_BASE_URL } from '../../utils/api/config';
 
 // MovieModal component
 const MovieModal = ({ open, handleClose, movie }) => {

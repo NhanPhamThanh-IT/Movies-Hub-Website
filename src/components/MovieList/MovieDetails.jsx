@@ -1,6 +1,6 @@
 // Desc: Optimized MovieDetails component
 
-import React from 'react';
+// Import necessary dependencies
 import PropTypes from 'prop-types';
 import {
     Card,
@@ -9,7 +9,6 @@ import {
     Typography,
     Grid,
     Box,
-    Button,
     CardActions,
     Stack,
 } from '@mui/material';
@@ -17,9 +16,13 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
-import InteractiveButton from '../InteractiveButton';
-import DisplayArrayAttribute from '../DisplayArrayAttribute';
+// Import custom components
+import InteractiveButton from '../Button/InteractiveButton';
+import DisplaySingleAttribute from '../Text/DisplaySingleAttribute';
+import DisplayArrayAttribute from '../Text/DisplayArrayAttribute';
+import CountryIconAsText from '../Text/CountryIconAsText';
 
+// MovieDetails component
 const MovieDetails = ({ movie }) => {
     const {
         title,
@@ -31,12 +34,10 @@ const MovieDetails = ({ movie }) => {
         vote_count,
         original_language,
         status,
-        revenue,
         genres,
     } = movie;
 
     const releaseYear = release_date ? new Date(release_date).getFullYear() : 'N/A';
-    const formattedRevenue = revenue ? revenue.toLocaleString() : 'N/A';
 
     return (
         <Card sx={{ mx: 'auto', my: 2, color: 'white', bgcolor: 'transparent', boxShadow: 'none' }}>
@@ -87,24 +88,14 @@ const MovieDetails = ({ movie }) => {
                                 </CardActions>
                             </Grid>
                             <Grid item xs={12}>
-                                <Card sx={{ borderRadius: 2, boxShadow: 3, p: 2 }}>
-                                    <CardContent>
-                                        <Stack spacing={2}>
-                                            <Typography variant="subtitle2" color="text.secondary">
-                                                Original Language: <strong>{original_language || 'N/A'}</strong>
-                                            </Typography>
-                                            <Typography variant="subtitle2" color="text.secondary">
-                                                Status: <strong>{status || 'N/A'}</strong>
-                                            </Typography>
-                                            {genres && genres.length > 0 && (
-                                                <DisplayArrayAttribute array={genres} prop="name" />
-                                            )}
-                                            <Typography variant="subtitle2" color="text.secondary">
-                                                Revenue: <strong>${formattedRevenue}</strong>
-                                            </Typography>
-                                        </Stack>
-                                    </CardContent>
-                                </Card>
+                                <Stack spacing={1}>
+                                    {genres && genres.length > 0 && (
+                                        <DisplayArrayAttribute array={genres} prop="name" />
+                                    )}
+                                    <DisplaySingleAttribute attribute="Original Language"
+                                        value={original_language ? (<CountryIconAsText country={original_language} />) : ("Not provided!")} />
+                                    <DisplaySingleAttribute attribute="Status" value={status || 'N/A'} />
+                                </Stack>
                             </Grid>
                             <Grid item xs={12}>
                                 <Typography variant="h6" fontWeight="bold" gutterBottom>
@@ -122,6 +113,7 @@ const MovieDetails = ({ movie }) => {
     );
 };
 
+// Expected prop types
 MovieDetails.propTypes = {
     movie: PropTypes.shape({
         title: PropTypes.string.isRequired,
@@ -133,11 +125,11 @@ MovieDetails.propTypes = {
         vote_count: PropTypes.number.isRequired,
         original_language: PropTypes.string.isRequired,
         status: PropTypes.string.isRequired,
-        revenue: PropTypes.number,
         genres: PropTypes.arrayOf(PropTypes.shape({
             name: PropTypes.string,
         })),
     }).isRequired,
 };
 
+// Export MovieDetails component
 export default MovieDetails;
